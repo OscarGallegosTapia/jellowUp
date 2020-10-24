@@ -18,11 +18,15 @@ function Login() {
   }
 
   return (
-    <form onSubmit={handle}>
-      <input type="text" value="test" />
-      <input type="password" value="test" />
-      <button type="submit">submit</button>
-    </form>
+    <div className="container">
+   <button className="invalid">Invalid username or password</button>
+   <h4>Log in to Jellow</h4>
+<form className="form" onSubmit={handle}>
+   <input type="text" placeholder="Enter email" value="test" />
+   <input type="password" placeholder="Enter password" value="test" />
+   <button type="submit">submit</button>
+</form>
+</div>
   )
 }
 

@@ -52,15 +52,18 @@ function Column(props) {
   return (
     <div>
       {cardList.map((item) => (
-        <div className="list-items" key={item.id}>
-          <p>{item.description}</p>
-          <button onClick={() => handleDelete(item)}>X</button>
+        <div className="list-row">
+          <ul className="list-items" key={item.id}>
+            <li>{item.description}</li>
+          </ul>
+          <button className="btn xbtn" onClick={() => handleDelete(item)}>x</button>
         </div>
       ))}
       <form onSubmit={handleSubmit}>
         <input
+        className="btn add-card"
           type="text"
-          placeholder="add new card"
+          placeholder="+ Add new card"
           onChange={(e) => setInputText(e.target.value)}
           value={inputText}
         ></input>
