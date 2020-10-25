@@ -21,6 +21,11 @@ import {
   selectBoard,
 } from "./boardSlice";
 import Column from "./Column";
+import { BrowserRouter as Router, Switch, Route, useHistory, Link } from 'react-router-dom'
+
+
+
+
 export function Board() {
   const projects = useSelector(selectProjects);
   const columns = useSelector(selectColumns);
@@ -44,13 +49,17 @@ export function Board() {
     dispatch(addColumn(inputText));
     setInputText("");
   }
+  function logoutUser(){
+    localStorage.clear()
+
+  }
+
   return (
     <>
       <div className="nav">
         <h1>Jellow</h1>
         <div>
-          <button className="logout">Log Out</button>
-          <img className="user" src="./user.jpg" /> 
+<Link to={`/logout`} ><button className="logout" onClick={() => logoutUser()}>Log Out</button> </Link>          <img className="user" src="https://avatars2.githubusercontent.com/u/54374528?s=460&u=530178baa8e92cf99b5dd75f5a053cff0e67ed11&v=4" />  
         </div>
       </div>
       {projects.map((item) => (

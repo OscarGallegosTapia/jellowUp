@@ -146,6 +146,77 @@ input,
   color: white;
 }
 
+/* login */
+.log {
+  padding: 10px;
+}
+.invalid {
+  background-color: rgba(255, 0, 0, 0.692);
+  width: 60%;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 0;
+}
+.container {
+  width: 28%;
+  background-color: white;
+  margin: 2% auto;
+  padding: 20px 0;
+  text-align: center;
+  border: 3px solid white;
+  box-shadow: 1px 0px 15px 5px rgba(229, 229, 229, 0.65);
+}
+.form {
+  padding: 30px 0;
+  position: relative;
+}
+.email, .password {
+  width: 300px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  font-size: 18px;
+  color: black;
+  font-weight: 300;
+  border: 1px solid lightgrey;
+}
+.password::placeholder, .email::placeholder {
+  color: grey;
+}
+.submit {
+  appearance: none;
+  outline: 0;
+  color: white;
+  border: 0;
+  padding: 10px 15px;
+  background-color: #50A3A2;
+  border-radius: 3px;
+  width: 300px;
+  font-size: 18px;
+}
+
+.loginPageHeader {
+  
+    color: black;
+    font-size: 6rem;
+    text-align: center;
+    font-weight: lighter;
+    font-family: "Rancho", cursive;
+
+}
+
+.imagesOnLogin{
+  display:flex;
+  justify-content: space-between;
+  
+}
+
+.picOnLogin{
+  width:35%;
+}
+
 /*--------------MODAL--------------*/
 #modalContainer {
   display: flex;
