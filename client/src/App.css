@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -98,7 +97,7 @@ input,
   outline: none;
   cursor: pointer;
   font-size: 1.1rem;
-   text-align: left;
+  text-align: left;
   border-radius: 0.3rem;
   margin: 20px auto 30px 10px;
 }
@@ -109,7 +108,8 @@ input,
   margin-left: 1.5rem;
   margin-bottom: 0;
 }
-.add-col:hover, .add-card:hover {
+.add-col:hover,
+.add-card:hover {
   background-color: lightgrey;
 }
 .xbtn {
@@ -144,4 +144,94 @@ input,
 }
 .add-col::placeholder {
   color: white;
+}
+
+/*--------------MODAL--------------*/
+#modalContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: absolute;
+  width: 25%;
+  min-height: 400px;
+  background: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.select {
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+.desc-title {
+  margin-bottom: 20px;
+}
+
+.desc-body {
+  margin-bottom: 20px;
+  border: 1px solid grey;
+  padding: 20px;
+  background: #fdcb6e;
+  border-radius: 5px;
+}
+
+.new-desc {
+  margin-bottom: 20px;
+}
+
+.members-title {
+  margin-bottom: 10px;
+}
+
+.member-input {
+  height: 6px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+}
+
+.save-exit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save {
+  width: 49%;
+  padding: 10px;
+  background: rgb(176, 253, 176);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.exit {
+  width: 49%;
+  padding: 10px;
+  background: rgb(255, 140, 140);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.columnChangeTitle {
+  margin-bottom: 10px;
+}
+
+.columnChange {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.newColumn {
+  border-bottom: 1px solid grey;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.newColumn:hover {
+  background: #fdcb6e;
 }
