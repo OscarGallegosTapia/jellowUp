@@ -1,23 +1,23 @@
 const express = require("express");
 const app = express();
-const authRoutes = require('./routes/auth')
+const authRoutes = require("./routes/auth");
 require("dotenv").config();
-const knex = require("./db")
+const knex = require("./db");
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 
 function attachUser(req, res, next) {
-  const authorizationHeader = req.headers.authorization
+  const authorizationHeader = req.headers.authorization;
   if (authorizationHeader) {
-    const token = authorizationHeader.split(' ')[1]
-    const decoded = jwtToken.decode(token)
-    req.user = { id: decoded.id, username: decoded.username }
+    const token = authorizationHeader.split(" ")[1];
+    const decoded = jwtToken.decode(token);
+    req.user = { id: decoded.id, username: decoded.username };
   }
-  next()
+  next();
 }
-app.use(attachUser)
-app.use('/api', authRoutes)
+app.use(attachUser);
+app.use("/api", authRoutes);
 
 app.get("/api/board", async (req, res) => {
   const boardList = await knex.raw(`select * from projects
@@ -77,11 +77,11 @@ app.post("/api/cards", async (req, res) => {
 });
 app.patch("/api/cards/:id", async (req, res) => {
   const { id } = req.params;
-  const { description } = req.body;
-  await knex.raw("UPDATE cards SET description = ? WHERE id = ?", [
-    description,
-    id,
-  ]);
+  // const { description } = req.body;
+  await knex.raw(
+    "UPDATE cards SET description = ?, column_id =? WHERE id = ?",
+    [req.body.description, req.body.column_id, id]
+  );
   res.json("updated card");
 });
 app.delete("/api/cards/:id", async (req, res) => {
